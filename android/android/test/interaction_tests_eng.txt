@@ -41,3 +41,19 @@ S> John has number 0701234567.
 --- request invalid number one-shot
 U> tell me Andy 's number
 S> Andy has no phone number.
+
+--- Make a call
+S> What would you like to do?
+U> make a call
+S> Who?
+U> john
+S> which john's number? home or company?
+U> what is tom's number
+S> Which tom's number? home or company?
+U> Company
+S> tom's company number is 1234567.which john's number? home or company?
+U> home
+S> Calling john's home number.
+
+
+
