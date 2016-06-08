@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<grammar>
+
+  <greeting>Welcome to your climate control</greeting>
+
+  <action name="adjust_temperature">
+    <one-of>
+      <item>
+        <verb-phrase>
+          <verb ref="adjust"/>
+          <noun ref="temperature"/>
+        </verb-phrase>
+      </item>
+      <item>
+        <verb-phrase>
+          <verb ref="increase"/>
+          <noun ref="temperature"/>
+        </verb-phrase>
+      </item>
+      <item>
+        <verb-phrase>
+          <verb ref="set"/>
+          <noun ref="temperature"/>
+        </verb-phrase>
+      </item>
+    </one-of>
+  </action>
+
+  <request action="adjust_temperature">
+    <utterance>
+      <one-of>
+        <item>
+          adjust the temperature to <individual sort="temperature"/>
+        </item>
+        <item>
+          set the temperature to <individual sort="temperature"/>
+        </item>
+        <item>
+          increase the temperature to <individual sort="temperature"/>
+        </item>
+        <item>
+          decrease the temperature to <individual sort="temperature"/>
+        </item>
+      </one-of>
+    </utterance>
+  </request>
+
+  <validity name="TemperatureValidity">
+    <utterance><individual predicate="desired_temperature"/> is not a valid temperature. Please select a value between 15 and 27 degrees</utterance>
+  </validity>
+
+  <question speaker="system" predicate="desired_temperature" type="wh_question">
+    <utterance>what temperature would you like</utterance>
+  </question>
+
+  <report action="SetTemperature" status="ended">
+    <utterance>The temperature is now changed from <individual predicate="current_temperature"/> to <individual predicate="desired_temperature"/></utterance>
+  </report>
+
+  <question predicate="cabin_temperature" speaker="user">
+    <utterance>
+      what is the temperature
+    </utterance>
+  </question>
+
+  <answer speaker="system" predicate="cabin_temperature">
+    <utterance>
+      the temperature is <individual predicate="cabin_temperature"/>
+    </utterance>
+  </answer>
+
+  <individual name="_temperature_22_">
+    <proper-noun>
+        twenty two degrees
+    </proper-noun>
+  </individual>
+
+  <lexicon>
+    <verb id="adjust">
+      <infinitive>adjust</infinitive>
+    </verb>
+    <verb id="set">
+      <infinitive>set</infinitive>
+    </verb>
+    <verb id="increase">
+      <infinitive>increase</infinitive>
+    </verb>
+    <noun id="temperature">
+      <singular>temperature</singular>
+    </noun>
+  </lexicon>
+
+
+</grammar>

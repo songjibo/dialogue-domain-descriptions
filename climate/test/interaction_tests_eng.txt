@@ -1,0 +1,27 @@
+--- main menu
+S> 
+
+--- adjust temperature
+S> *
+U> adjust the temperature
+S> What temperature would you like?
+U> 20 degrees
+S> The temperature is now changed from 18 degrees to 20 degrees.
+
+--- set temperature
+U> set the temperature
+S> What temperature would you like?
+
+--- set temperature one shot
+U> adjust the temperature to 20 degrees
+S> The temperature is now changed from 18 degrees to 20 degrees.
+
+--- set temperature too high
+U> increase the temperature to 200 degrees
+S> 200 degrees is not a valid temperature*
+
+--- ask for temperature
+U> what is the temperature
+S> The temperature is 18 degrees.
+
+

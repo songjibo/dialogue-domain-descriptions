@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ontology name="ClimateOntology">
+
+  <action name="adjust_temperature"/>
+
+  <predicate name="desired_temperature" sort="temperature"/>
+  <predicate name="current_temperature" sort="temperature"/>
+  <predicate name="cabin_temperature" sort="temperature"/>
+
+  <sort name="temperature" dynamic="true"/>
+
+  <individual sort="temperature" name="_temperature_22_"/>
+
+</ontology>

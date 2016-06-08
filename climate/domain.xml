@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<domain name="ClimateDomain" is_super_domain="true">
+
+
+  <goal type="perform" action="top" reraise_on_resume="false">
+    <plan>
+      <forget_all/>
+      <findout type="goal"/>
+    </plan>
+  </goal>
+
+  <parameters question_type="goal" verbalize="false">
+    <alt>
+      <perform action="adjust_temperature"/>
+    </alt>
+  </parameters>
+
+  <goal type="perform" action="adjust_temperature" reraise_on_resume="false">
+    <plan>
+      <findout type="wh_question" predicate="desired_temperature"/>
+      <dev_query type="wh_question" predicate="current_temperature"
+                 device="ClimateDevice"/>
+      <dev_perform action="SetTemperature" device="ClimateDevice" postconfirm="True"/>
+    </plan>
+    <postcond>
+      <device_activity_terminated action="SetTemperature"/>
+    </postcond>
+  </goal>
+
+  <goal type="resolve" predicate="cabin_temperature" 
+        question_type="wh_question">
+    <plan>
+      <dev_query type="wh_question" predicate="cabin_temperature"
+                 device="ClimateDevice"/>
+    </plan>
+  </goal>
+
+</domain>
+
