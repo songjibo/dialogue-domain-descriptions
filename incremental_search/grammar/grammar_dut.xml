@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<grammar>
+  <action name="call">
+    <verb-phrase>
+      <verb ref="call"/>
+    </verb-phrase>
+  </action>
+
+  <request action="call">
+    <utterance>
+      <one-of>
+        <item>ik wil bellen</item>
+        <item>ik wil <individual sort="contact"/></item>
+	<item>ik wil <individual sort="first_name"/> <individual sort="last_name"/> bellen</item>
+	<item>ik wil <individual sort="first_name"/> bellen</item>
+	<item>ik wil <individual sort="last_name"/> bellen</item>
+      </one-of>
+    </utterance>
+  </request>
+
+  <report action="Call" status="ended">
+    <utterance><individual predicate="selected_contact_to_call"/> wordt gebeld</utterance>
+  </report>
+
+  <question speaker="system" predicate="selected_contact" type="wh_question">
+    <utterance>wie wilt u bellen</utterance>
+  </question>
+
+  <question speaker="system" predicate="selected_first_name" type="wh_question">
+    <utterance>wat is de eerste naam</utterance>
+  </question>
+
+  <question speaker="system" predicate="selected_last_name" type="wh_question">
+    <utterance>wat is de achternaam</utterance>
+  </question>
+
+  <lexicon>
+    <verb id="call">
+      <infinitive>bellen</infinitive>
+    </verb>
+  </lexicon>
+</grammar>

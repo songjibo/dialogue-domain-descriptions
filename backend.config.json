@@ -1,8 +1,8 @@
 {
-    "active_ddd": "android",
+    "active_ddd": "incremental_search",
     "asr": "android",
     "ddds": [
-        "android",
+        "incremental_search",
         "climate"
     ],
     "supported_languages": [
