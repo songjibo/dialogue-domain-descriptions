@@ -1,15 +1,10 @@
---- main menu
-S> What would you like to do?
-
 --- call
-S> What would you like to do?
 U> make a call
 S> Who do you want to call?
 U> John
 S> Calling John.
 
 --- call one-shot
-S> What would you like to do?
 U> call john
 S> Calling John.
 
@@ -28,7 +23,6 @@ U> John
 S> Calling John.
 
 --- request number
-S> What would you like to do?
 U> tell me a phone number
 S> Whose number?
 U> John
@@ -43,18 +37,12 @@ U> tell me Andy 's number
 S> Andy has no phone number.
 
 --- Make a call and ask for temperature
-S> What would you like to do?
 U> make a call
-S> Who?
+S> Who do you want to call?
 U> john
 S> Which number to call? Home or company?
-U> What is the temperature?
-S> Indoor or outdoor?
-U> Outdoor
-S> 25 degrees
+U> what is the temperature
+S> The temperature is 18 degrees.
 S> Which number to call? Home or company?
 U> home
 S> Calling john's home number.
-
-
-
