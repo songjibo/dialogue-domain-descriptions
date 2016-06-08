@@ -1,16 +1,6 @@
 .idea
 build
-site/
-incremental_search_eng.py
-incremental_search_words.txt
-basic_action_eng.py
-basic_action_words.txt
-parameter_validation_eng.py
-parameter_validation_words.txt
-android_eng.py
-android_words.txt
-basic_query_eng.py
-basic_query_words.txt
+*/grammar/*_words_*.txt
 *.pyc
 *~
 */logs/

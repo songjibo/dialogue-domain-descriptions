@@ -2,11 +2,10 @@
     "active_ddd": "android",
     "asr": "android",
     "ddds": [
-        "android"
+        "android",
+        "climate"
     ],
     "supported_languages": [
-        "eng",
-        "fre",
-        "dut"
+        "eng"
     ]
 }
