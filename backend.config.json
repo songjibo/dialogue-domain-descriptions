@@ -2,8 +2,7 @@
     "active_ddd": "incremental_search",
     "asr": "android",
     "ddds": [
-        "incremental_search",
-        "climate"
+        "incremental_search"
     ],
     "supported_languages": [
         "eng"

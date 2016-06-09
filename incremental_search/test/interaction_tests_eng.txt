@@ -20,10 +20,10 @@ U> make a call
 S> What is the first name?
 U> john
 S> What is the last name?
-U> what is the temperature
-S> The temperature is 18 degrees.
-U>
-S> Returning to calling. What is the last name?
+# U> what is the temperature
+# S> The temperature is 18 degrees.
+# U>
+# S> Returning to calling. What is the last name?
 U> johnson
 S> Calling John Johnson.
 
