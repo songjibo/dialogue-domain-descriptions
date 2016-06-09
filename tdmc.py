@@ -86,6 +86,7 @@ elif tdm_command == "serve":
     conn = httplib.HTTPConnection(tdmc_host, 9091)
     conn.request("PUT", "/ddds/%s/tdm-serve%s" % (tdmc_account, tdm_lang))
     print conn.getresponse().read()
+    print "Accepting connections on ws://%s:9090/maharani" % tdmc_host 
 elif tdm_command == "stop":
     conn = httplib.HTTPConnection(tdmc_host, 9091)
     conn.request("PUT", "/ddds/%s/tdm-stop" % tdmc_account)
