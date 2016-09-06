@@ -4,7 +4,9 @@
     "ddds": [
         "incremental_search"
     ],
+    "repeat_questions": true,
     "supported_languages": [
         "eng"
-    ]
+    ],
+    "use_recognition_profile": false
 }
