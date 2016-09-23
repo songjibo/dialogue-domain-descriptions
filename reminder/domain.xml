@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<domain name="set_clock" is_super_domain="true">
+
+  <goal type="perform" action="top" reraise_on_resume="false">
+    <plan>
+      <forget_all/>
+      <findout type="goal"/>
+    </plan>
+  </goal>
+
+  <parameters question_type="goal" verbalize="false">
+    <alt>
+      <perform action="alarm_clock"/>
+    </alt>
+  </parameters>
+
+  <goal type="perform" action="alarm_clock" reraise_on_resume="false">
+    <plan>
+      <findout type="wh_question" predicate="clock_time"/>
+      <dev_perform action="SetTemperature" device="ClimateDevice" postconfirm="True"/>
+    </plan>
+    <postcond>
+      <device_activity_terminated action="SetTemperature"/>
+    </postcond>
+  </goal>
+
+</domain>
+

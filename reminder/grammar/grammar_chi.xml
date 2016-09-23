@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<grammar>
+
+  <greeting>Welcome to your climate control</greeting>
+
+  <action name="alarm_clock">
+      <item>
+        <verb-phrase>
+          <verb ref="Set"/>
+          <noun ref="clock"/>
+        </verb-phrase>
+      </item>
+  </action>
+
+
+  <question speaker="system" predicate="clock_time" type="wh_question">
+    <utterance>设置几点闹钟</utterance>
+  </question>
+
+  <report action="alarm_clock" status="ended">
+    <utterance>已经设置 <individual predicate="clock_time"/> 闹钟</utterance>
+  </report>
+
+  <lexicon>
+    <verb id="set">
+      <infinitive>设置闹钟</infinitive>
+    </verb>
+    <noun id="clock">
+      <singular>闹钟</singular>
+    </noun>
+  </lexicon>
+
+
+</grammar>

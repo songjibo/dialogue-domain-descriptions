@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ontology name="ReminderOntology">
+
+  <action name="alarm_clock"/>
+
+  <predicate name="clock_time" sort="Time"/>
+
+  <sort name="Time" dynamic="true"/>
+
+  <individual sort="time" name="seven_clock"/>
+
+</ontology>

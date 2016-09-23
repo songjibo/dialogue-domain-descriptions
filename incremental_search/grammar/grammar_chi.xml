@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<grammar>
+  <action name="call">
+    <verb-phrase>
+      <verb ref="call"/>
+    </verb-phrase>
+  </action>
+
+  <request action="call">
+    <utterance>
+      <one-of>
+        <item>打电话</item>
+        <item>呼叫<individual sort="contact"/></item>
+	<item>拨打<individual sort="first_name"/> <individual sort="last_name"/></item>
+	<item>给<individual sort="first_name"/>打电话</item>
+	<item>给<individual sort="last_name"/>回电话</item>
+      </one-of>
+    </utterance>
+  </request>
+
+  <report action="Call" status="ended">
+    <utterance>打电话给<individual predicate="selected_contact"/></utterance>
+  </report>
+
+  <question speaker="system" predicate="selected_contact" type="wh_question">
+    <utterance>你想打电话给谁？</utterance>
+  </question>
+
+  <question speaker="system" predicate="selected_first_name" type="wh_question">
+    <utterance>what is the first name</utterance>
+  </question>
+
+  <question speaker="system" predicate="selected_last_name" type="wh_question">
+    <utterance>what is the last name</utterance>
+  </question>
+
+  <lexicon>
+    <verb id="call">
+      <infinitive>打电话</infinitive>
+    </verb>
+  </lexicon>
+</grammar>
