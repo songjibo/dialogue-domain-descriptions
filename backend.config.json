@@ -6,7 +6,7 @@
     ],
     "repeat_questions": true,
     "supported_languages": [
-        "eng"
+        "eng","chi"
     ],
     "use_recognition_profile": false
 }
