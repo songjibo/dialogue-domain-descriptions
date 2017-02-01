@@ -1,0 +1,24 @@
+--- adjust temperature
+S> *
+U> 调整温度
+S> 请问调整到多少度?
+U> 20度
+S> 好的，已经调整，现在已经将温度从18度调整到20度了.
+
+--- set temperature
+U> 设置温度
+S> 请问设置多少度?
+
+--- set temperature one shot
+U> 调整温度到20度
+S> 好的，已经调整，现在已经将温度从18度调整到20度了.
+
+--- set temperature too high
+U> 调整温度到200度
+S> 200度已经超出温度的设定范围
+
+--- ask for temperature
+U> 现在多少度
+S> 现在温度是18度.
+
+

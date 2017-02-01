@@ -1,0 +1,29 @@
+--- call first-name
+S> 你想做什么?
+U> 打电话给张三
+S> 张三的那个号码?
+U> 移动电话
+S> 正在打电话给张三的移动电话.
+
+--- call one-shot
+S> 你想做什么?
+U> 打电话给张三的移动号码
+S> 正在打电话给张三的移动电话.
+
+--- call last-name
+S> What would you like to do?
+U> call johnson
+S> Calling John Johnson.
+
+--- Make a call and ask for temperature
+U> make a call
+S> What is the first name?
+U> john
+S> What is the last name?
+# U> what is the temperature
+# S> The temperature is 18 degrees.
+# U>
+# S> Returning to calling. What is the last name?
+U> johnson
+S> Calling John Johnson.
+

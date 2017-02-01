@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<grammar>
+  <greeting>Welcome to your climate control</greeting>
+
+  <action name="adjust_temperature">
+    <one-of>
+      <item>
+        <verb-phrase>
+          <verb ref="adjust"/>
+          <noun ref="temperature"/>
+        </verb-phrase>
+      </item>
+      <item>
+        <verb-phrase>
+          <verb ref="increase"/>
+          <noun ref="temperature"/>
+        </verb-phrase>
+      </item>
+      <item>
+        <verb-phrase>
+          <verb ref="set"/>
+          <noun ref="temperature"/>
+        </verb-phrase>
+      </item>
+    </one-of>
+  </action>
+
+  <request action="adjust_temperature">
+    <utterance>
+      <one-of>
+        <item>
+          调整温度到 <individual sort="temperature"/>
+        </item>
+        <item>
+          设置温度到 <individual sort="temperature"/>
+        </item>
+        <item>
+          调高温度到 <individual sort="temperature"/>
+        </item>
+        <item>
+          调低温度到 <individual sort="temperature"/>
+        </item>
+      </one-of>
+    </utterance>
+  </request>
+
+  <validity name="TemperatureValidity">
+    <utterance><individual predicate="desired_temperature"/> 已经超出温度设置范围，温度设置范围是15到27度</utterance>
+  </validity>
+
+  <question speaker="system" predicate="desired_temperature" type="wh_question">
+    <utterance>需要调整到多少度</utterance>
+  </question>
+
+  <report action="SetTemperature" status="ended">
+    <utterance>调整完成，温度已经从<individual predicate="current_temperature"/> 调整到 <individual predicate="desired_temperature"/></utterance>
+  </report>
+
+  <question predicate="cabin_temperature" speaker="user">
+    <utterance>
+      温度多少度
+    </utterance>
+  </question>
+
+  <answer speaker="system" predicate="cabin_temperature">
+    <utterance>
+      当前温度是 <individual predicate="cabin_temperature"/>
+    </utterance>
+  </answer>
+
+  <individual name="_temperature_22_">
+    <proper-noun>
+        22度
+    </proper-noun>
+  </individual>
+
+  <lexicon>
+    <verb id="adjust">
+      <infinitive>调整</infinitive>
+    </verb>
+    <verb id="set">
+      <infinitive>设置</infinitive>
+    </verb>
+    <verb id="increase">
+      <infinitive>调高</infinitive>
+    </verb>
+    <noun id="temperature">
+      <singular>温度</singular>
+    </noun>
+  </lexicon>
+
+
+</grammar>

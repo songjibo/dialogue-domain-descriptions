@@ -2,7 +2,8 @@
     "active_ddd": "incremental_search",
     "asr": "android",
     "ddds": [
-        "incremental_search"
+        "incremental_search",
+	"climate"
     ],
     "repeat_questions": true,
     "supported_languages": [
