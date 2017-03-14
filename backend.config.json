@@ -1,13 +1,13 @@
 {
-    "active_ddd": "incremental_search",
+    "active_ddd": "android",
     "asr": "android",
     "ddds": [
-        "incremental_search",
-	"climate"
+        "android"
     ],
     "repeat_questions": true,
     "supported_languages": [
-        "eng","chi"
+        "eng",
+        "chi"
     ],
     "use_recognition_profile": false
 }

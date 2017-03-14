@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<grammar>
+  <action name="call">
+    <verb-phrase>
+      <verb ref="call"/>
+    </verb-phrase>
+  </action>
+
+  <request action="call">
+    <utterance>
+      <one-of>
+        <item>打 个 电 话</item>
+        <item>打 电 话 给 <individual sort="contact"/></item>
+      </one-of>
+    </utterance>
+  </request>
+
+  <question speaker="system" predicate="selected_contact_to_call" type="wh_question">
+    <utterance>您 想 打 电 话 给 谁</utterance>
+  </question>
+
+  <report action="Call" status="ended">
+    <utterance>正 在 拨 打 <individual predicate="selected_contact_to_call"/> 电 话</utterance>
+  </report>
+
+  <question speaker="system" predicate="selected_contact_of_phone_number" type="wh_question">
+    <utterance>请 问 需 要 谁 的 电 话 号 码</utterance>
+  </question>
+
+  <predicate name="phone_number_of_contact">
+    <noun-phrase>
+      <noun ref="number" />
+    </noun-phrase>
+  </predicate>
+
+  <validity name="PhoneNumberAvailable">
+    <utterance>没 有 找 到 <individual predicate="selected_contact_to_call"/> 的 电 话 号 码</utterance>
+  </validity>
+
+  <question speaker="user" predicate="phone_number_of_contact">
+    <utterance>
+      <one-of>
+        <item>给 我 个 电 话 号 码</item>
+        <item><individual sort="contact"/> 的 号 码 是 啥</item>
+        <item>告 诉 我 <individual sort="contact"/> 的 号 码</item>
+      </one-of>
+    </utterance>
+  </question>
+
+  <answer speaker="system" predicate="phone_number_of_contact">
+    <utterance>
+      <individual predicate="selected_contact_of_phone_number"/> 的 号 码 是
+      <individual predicate="phone_number_of_contact"/>
+    </utterance>
+  </answer>
+
+  <lexicon>
+    <verb id="call">
+      <infinitive>呼 叫</infinitive>
+    </verb>
+    <noun id="number">
+      <singular>号 码</singular>
+    </noun>
+  </lexicon>
+</grammar>

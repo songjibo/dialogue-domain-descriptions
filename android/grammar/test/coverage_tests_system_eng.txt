@@ -1,0 +1,4 @@
+ICMMove(icm:und*pos:USR*goal(resolve(?X.phone_number_of_contact(X)))) :: You want to know the number.
+ICMMove(icm:und*int:USR*goal(resolve(?X.phone_number_of_contact(X)))) :: Do you want to know the number?
+Move(ask(?goal(resolve(?X.phone_number_of_contact(X))))) :: Do you want to know the number?
+ICMMove(icm:reraise:resolve(?X.phone_number_of_contact(X))) :: Returning to the number.

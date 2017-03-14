@@ -1,0 +1,1 @@
+Move(ask(?X.goal(X))) :: 你想做什么？
